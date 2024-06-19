@@ -1,7 +1,7 @@
 import moment from "moment";
 
 const getCurrentTime = () => {
-    const now = moment().format("YYYY-MM-dd HH:mm:ss");
+    const now = moment().format("YYYY-MM-DD HH:mm:ss");
     return now;
 };
 

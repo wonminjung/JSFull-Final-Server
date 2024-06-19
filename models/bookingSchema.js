@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import { getCurrentTime } from "../utils/utils";
+import { getCurrentTime } from "../utils/utils.js";
 import { ObjectId } from "mongodb";
 
 const bookingSchema = new Schema({
@@ -12,9 +12,9 @@ const bookingSchema = new Schema({
     },
     userId : { 
         type: ObjectId,
-         ref: "User", 
-         Unique: true, 
-         required:true
+        ref: "User",
+        Unique: true,
+        required:true
     },
     roomId : { 
         type: ObjectId, 
@@ -30,7 +30,6 @@ const bookingSchema = new Schema({
         type : String, 
         default : getCurrentTime
     },
-
     checkInDate : {
         type: Date, 
         required: true 
