@@ -1,8 +1,8 @@
 import { Schema, model } from "mongoose";
-import { getCurrentTime } from "../utils/utils";
+import { getCurrentTime } from "../utils/utils.js";
+import { ObjectId } from "mongodb";
 
 const userSchema = new Schema({
-
     userId: {
         type: String, 
         required: true, 
@@ -32,9 +32,12 @@ const userSchema = new Schema({
         required: true, 
         default : "010-0000-0000"
     },
-    wishList : { 
-        type : Array
-    },
+    wishList : [ 
+        {
+            type : ObjectId,
+            ref: "Room",
+        }
+    ],
 
     createdAt : { 
         type : String, 
@@ -44,7 +47,6 @@ const userSchema = new Schema({
         type : String, 
         default : getCurrentTime
     },
-
 });
 
 export default model("User", userSchema, "user");

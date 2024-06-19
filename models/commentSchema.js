@@ -1,14 +1,16 @@
 import { Schema, model } from "mongoose";
-import { getCurrentTime } from "../utils/utils";
+import { getCurrentTime } from "../utils/utils.js";
 import { ObjectId } from "mongodb";
 
 const commentSchema = new Schema({
     userId : {
-        type: String, 
+        type: ObjectId,
+        ref: "User",
         required : true
     },
     roomId : {
-        type: Number, 
+        type: ObjectId,
+        ref: "Room",
         required : true
     },
     body : {
@@ -21,8 +23,26 @@ const commentSchema = new Schema({
         default: 0
     },
     grade : {
-        type: ObjectId, 
-        required : true
+        clean : {
+            type : Number,
+            required: true
+        },
+        accuracy : {
+            type : Number,
+            required: true
+        },
+        communication : {
+            type : Number,
+            required: true
+        },
+        location : {
+            type : Number,
+            required: true
+        },
+        priceSatis : {
+            type : Number,
+            required: true
+        }
     },
     createAt: {
         type: String, 
