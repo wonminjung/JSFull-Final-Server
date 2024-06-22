@@ -1,5 +1,10 @@
 import express from "express";
-import { detailRoom, mainRoom, reservationRoom, searchRoom, wishListRoom } from "../controller/room/room.js";
+import detailRoom from "../controller/room/detailRoom.js";
+import searchRoom from "../controller/room/searchRoom.js";
+import wishListRoom from "../controller/room/wishListRoom.js";
+import reservationRoom from "../controller/room/reservationRoom.js";
+import mainRoom from "../controller/room/mainRoom.js";
+
 
 const roomRouter = express.Router();
 
