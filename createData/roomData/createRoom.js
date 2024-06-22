@@ -4215,7 +4215,7 @@ const room_Insert = await Room.create(
 //     // camp
 //     {
 //         userId : user1,
-//         cate : "logHouse",
+//         cate : "camp",
 //         roomImg : [
 //             "https://a0.muscache.com/im/pictures/prohost-api/Hosting-54133461/original/66cf062b-3a57-497a-a20b-e809f22150a1.jpeg?im_w=720",
 //             "https://a0.muscache.com/im/pictures/prohost-api/Hosting-54133461/original/c2a041e2-b1e8-49de-ad26-d97a7721ee60.jpeg?im_w=720",
@@ -4297,7 +4297,7 @@ const room_Insert = await Room.create(
 //     },
 //     {
 //         userId : user1,
-//         cate : "logHouse",
+//         cate : "camp",
 //         roomImg : [
 //             "https://a0.muscache.com/im/pictures/miso/Hosting-1160453437723716253/original/10c1ac4c-acf3-4551-b58c-e58090bef34e.jpeg?im_w=720",
 //             "https://a0.muscache.com/im/pictures/miso/Hosting-1160453437723716253/original/73f94c4f-a627-4b4b-8e9b-cea52091c5d9.jpeg?im_w=720",
@@ -4390,7 +4390,7 @@ const room_Insert = await Room.create(
 //     },
 //     {
 //         userId : user1,
-//         cate : "logHouse",
+//         cate : "camp",
 //         roomImg : [
 //             "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTIzMDA3MjU5NDUxMTEyOTU0/original/22744756-3c4a-4ae3-beee-90fb907e96e9.png?im_w=720",
 //             "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTIzMDA3MjU5NDUxMTEyOTU0/original/8f8fcb58-815a-4b5a-bbae-6ac072808ee9.png?im_w=720",
@@ -4477,7 +4477,7 @@ const room_Insert = await Room.create(
 //     },
 //     {
 //         userId : user1,
-//         cate : "logHouse",
+//         cate : "camp",
 //         roomImg : [
 //             "https://a0.muscache.com/im/pictures/miso/Hosting-1051630299358628403/original/2805d94c-4e8f-45d4-b9c2-3b2e9aeec5b0.png?im_w=720",
 //             "https://a0.muscache.com/im/pictures/miso/Hosting-1051630299358628403/original/bfd9984e-4536-441e-97da-79b85279baa0.png?im_w=720",
