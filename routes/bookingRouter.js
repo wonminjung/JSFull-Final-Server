@@ -1,5 +1,6 @@
 import express from "express";
-import { bookingListBooking, reservationBooking } from "../controller/booking/booking.js";
+import reservationBooking from "../controller/booking/reservationBooking";
+import bookingListBooking from "../controller/booking/bookingListBooking";
 
 const bookingRouter = express.Router();
 
