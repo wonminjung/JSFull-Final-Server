@@ -34,17 +34,11 @@ const roomSchema = new Schema({
     notice : [
         [
             {
-                content : {
+                icon : {
                     type: String,
                     required: true
-                }
-            }
-        ]
-    ],
-    noticeIcon : [
-        [
-            {
-                icon : {
+                },
+                content : {
                     type: String,
                     required: true
                 }
@@ -57,15 +51,11 @@ const roomSchema = new Schema({
     },
     convenience : [
         {
+            icon : {
+                type: String, required: true
+            },
             con : {
                 type: String, required: true
-            }
-        }
-    ],
-    convenienceIcon : [
-        {
-            icon : {
-                type: Array, required: true
             }
         }
     ],
