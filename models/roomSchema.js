@@ -77,6 +77,7 @@ const roomSchema = new Schema({
             required: true
         }
     },
+    cleanVat: {type: Number, required: true},
     createdAt: {
         type: String,
         default: getCurrentTime
