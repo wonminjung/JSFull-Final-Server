@@ -86,6 +86,11 @@ const roomSchema = new Schema({
         type: String,
         default: getCurrentTime
     },
+    roomSchedule: [
+        {
+            type: Date
+        }
+    ]
 });
 
 export default model("Room", roomSchema, "room");
