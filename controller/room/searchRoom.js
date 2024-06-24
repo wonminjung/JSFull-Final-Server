@@ -6,10 +6,20 @@ const searchRoom = async (req, res) => {
     console.log(req.method);
     
     const rooms = await Room.find({cate: req.query.cate});
-    if (rooms) {
-        res.status(200).json({rooms: rooms});
+    if (rooms.length === 0) {
+        res.status(401).json(
+            {
+                searchResult: false,
+                message: "검색 결과가 없습니다.",
+            }
+        );
     } else {
-        res.status(401);
+        res.status(200).json(
+            {
+                searchResult: true,
+                rooms: rooms
+            }
+        );
     }
 
 };
