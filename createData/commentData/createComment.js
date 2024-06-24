@@ -329,9 +329,9 @@ const reviewList = [
 const rooms = await Room.find();
 const dbUsers = await User.find({}, {_id: true, userId: true, name: true });
 
-const room = await Room.findById("6677e7feda6e844a7592619f");
-const comment = await Comment.find({roomId: room.id}, {_id: true, body: true});
-console.log(comment);
+const room = await Room.findById("");
+// const comment = await Comment.find({roomId: room.id}, {_id: true, body: true});
+// console.log(comment);
 // const comment = await Comment.find({roomId: room.id});
 // console.log(comment);
 // console.log(comment.length);
@@ -366,13 +366,13 @@ rooms.forEach(async (room) => {
 
     let roomObId = room._id.toString();
     for (let i = 0; i < randomCount; i++) {
-        // let comment_Insert = await Comment.create(
-        //     {
-        //         userId : users[i],
-        //         roomId : roomObId,
-        //         ...reviewList[randomStarIndexArray[i]],
-        //     },
-        // )
+        let comment_Insert = await Comment.create(
+            {
+                userId : users[i],
+                roomId : roomObId,
+                ...reviewList[randomStarIndexArray[i]],
+            },
+        )
     }
 
 
