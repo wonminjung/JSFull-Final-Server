@@ -52,18 +52,16 @@ const searchRoom = async (req, res) => {
 
 
 
-
-
-
+    // 여기
     const isCateCheck = cate === "searchResult" ?
         {
-            roomSchedule: { $not: {$elemMatch: {$gte: new Date(sdate + "Z"), $lte: new Date(edate)}} },
+            roomSchedule: { $not: {$elemMatch: {$gte: new Date(sdate + "Z"), $lte: new Date(edate + "Z")}} },
             dayPrice: {$gte: Number(lPrice), $lte: Number(gPrice)}, address: {$regex: val},
             "roomData.maxUser": {$gte: Number(guests)}
         }
         :
         {
-            roomSchedule: { $not: {$elemMatch: {$gte: new Date(sdate + "Z"), $lte: new Date(edate)}} },
+            roomSchedule: { $not: {$elemMatch: {$gte: new Date(sdate + "Z"), $lte: new Date(edate + "Z")}} },
             cate: cate, dayPrice: {$gte: Number(lPrice), $lte: Number(gPrice)}, address: {$regex: val},
             "roomData.maxUser": {$gte: Number(guests)}
         }
