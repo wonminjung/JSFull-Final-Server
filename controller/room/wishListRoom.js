@@ -4,9 +4,10 @@ import User from "../../models/userSchema.js";
 
 const wishListRoom = async (req, res) => {
     try {
+        console.log(req);
         // user 조회 (wishList 참조객체도 같이)
-        const user = await User.findOne({ userId: req.query.userId }).populate("wishList");
-
+        const user = await User.findOne({ userId: req.body.userId }).populate("wishList");
+        
         if (!user) {
             console.log("User not found");
             return res.status(404).json({ message: "User not found" });
@@ -31,5 +32,8 @@ const wishListRoom = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+
+
 
 export default wishListRoom;

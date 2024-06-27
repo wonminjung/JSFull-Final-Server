@@ -1,0 +1,39 @@
+import mongoose from "mongoose";
+import Room from "../../models/roomSchema.js";
+import User from "../../models/userSchema.js";
+
+const UpdateWishListRoom = async( req, res) => {
+    try {
+        const user = await User.findOne({ userId: req.body.userId }).populate("wishList");
+        const roomId = await Room.findOne({ _id : req.body.roomId});
+
+        if (!user) {
+            console.log("User not found");
+            return res.status(404).json({ message: "User not found" });
+        }
+        
+        // check
+        // console.log("User Name:", user.name);
+
+        const rooms = 
+        // 데이터 수정하는 방법
+        // $set
+        // _id는 mongoDB에서 지정한 id key값
+        // const member = await collection.findOne({ name : "kim" });
+        // await collection.updateOne({ _id : member._id }, { $set : { name : "세환"} })
+
+        user.wishList = rooms.filter(room => room._id !== req.body.roomId);
+
+
+
+    }catch(error) {
+        console.error("Error fetching wishList:", error);
+        res.status(500).json({ message: error.message });
+    }
+
+
+
+
+}
+
+export default UpdateWishListRoom;
