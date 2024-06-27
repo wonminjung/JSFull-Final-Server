@@ -1,4 +1,4 @@
-import userSchema from "../../models/userSchema";
+import userSchema from "../../models/userSchema.js";
 
 // 로그인
 const signInUser = async (req, res) => {

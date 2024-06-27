@@ -1,4 +1,4 @@
-import userSchema from "../../models/userSchema";
+import userSchema from "../../models/userSchema.js";
 
 // 회원가입
 const signUpUser = async (req, res) => {
