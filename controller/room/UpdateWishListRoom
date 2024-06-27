@@ -4,34 +4,30 @@ import User from "../../models/userSchema.js";
 
 const UpdateWishListRoom = async( req, res) => {
     try {
-        const user = await User.findOne({ userId: req.body.userId }).populate("wishList");
-        const roomId = await Room.findOne({ _id : req.body.roomId});
+        const user = await User.findOne({ userId: req.body.userId }); //로그인한 유저의 객체
+        const roomId = req.body.roomId; //클릭한 숙소
+
+        console.log(req.body);
+        console.log(user);
+        console.log(roomId);
 
         if (!user) {
             console.log("User not found");
             return res.status(404).json({ message: "User not found" });
-        }
-        
-        // check
-        // console.log("User Name:", user.name);
-
-        const rooms = 
-        // 데이터 수정하는 방법
-        // $set
-        // _id는 mongoDB에서 지정한 id key값
-        // const member = await collection.findOne({ name : "kim" });
-        // await collection.updateOne({ _id : member._id }, { $set : { name : "세환"} })
-
-        user.wishList = rooms.filter(room => room._id !== req.body.roomId);
-
-
+        }else{
+            const updatedWishList = user.wishList.filter((rooms) => rooms._id.toString() !== roomId)
+            // user.wishList = rooms.filter(room => room._id !== req.body.roomId);
+            // console.log(updatedWishList)
+            //console.log(updatedWishList)
+            await User.updateOne({_id : user._id}, {$set : { wishList : updatedWishList}})
+            res.status(200).json({message : "wishList updated successfully", wishList : user.wishList});
+            console.log(res);
+        }  
 
     }catch(error) {
         console.error("Error fetching wishList:", error);
         res.status(500).json({ message: error.message });
     }
-
-
 
 
 }

@@ -12,9 +12,7 @@ const port = 8000;
 
 app.use(cors());
 
-app.use(bodyParser.json()); // 가은 추가
-
-app.use(express.urlencoded({extended : false})); // 가은 추가
+app.use(bodyParser.json()); 
 
 app.use("/", rootRouter);
 
