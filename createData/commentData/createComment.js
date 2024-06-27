@@ -329,12 +329,6 @@ const reviewList = [
 const rooms = await Room.find();
 const dbUsers = await User.find({}, {_id: true, userId: true, name: true });
 
-const room = await Room.findById("");
-// const comment = await Comment.find({roomId: room.id}, {_id: true, body: true});
-// console.log(comment);
-// const comment = await Comment.find({roomId: room.id});
-// console.log(comment);
-// console.log(comment.length);
 
 const randomDeduplication = (count, limit) => {
     let array = [];
