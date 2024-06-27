@@ -4,7 +4,7 @@ import userSchema from "../../models/userSchema.js";
 const signInUser = async (req, res) => {
     
     // 유저 찾기
-    const user = await userSchema.findOne({email : req.body.email});
+    const user = await userSchema.findOne({userId : req.body.userId});
 
     // 존재하지 않은 유저일 때
     if(!user){
