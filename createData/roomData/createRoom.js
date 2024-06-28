@@ -132,6 +132,12 @@ const room_Insert = await Room.create(
 //             ]
 //         ],
 //         cleanVat : 50000,
+//         roomSchedule : [
+//             "2024.06.30",
+//             "2024.07.01",
+//             "2024.07.04",
+//             "2024.07.05",
+//         ]
 //     },
 //     {
 //         userId : user1,
@@ -260,6 +266,13 @@ const room_Insert = await Room.create(
             
 //         ],
 //         cleanVat : 30000,
+//         roomSchedule : [
+//             "2024.06.27",
+//             "2024.06.28",
+//             "2024.06.29",
+//             "2024.07.08",
+//             "2024.07.09",
+//         ]
 //     },
 //     {
 //         userId : user2,
@@ -419,6 +432,11 @@ const room_Insert = await Room.create(
             
 //         ],
 //         cleanVat : 50000,
+//         roomSchedule : [
+//             "2024.07.27",
+//             "2024.07.28",
+//             "2024.06.29",
+//         ]
 //     },
 //     {
 //         userId : user2,
