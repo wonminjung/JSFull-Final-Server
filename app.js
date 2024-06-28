@@ -16,4 +16,6 @@ app.use(bodyParser.json());
 
 app.use("/", rootRouter);
 
+app.use("/uploads", express.static('uploads'));
+
 app.listen(port, () => {console.log(`Server is on ${port} port`)});
