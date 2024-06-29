@@ -12,8 +12,10 @@ const port = 8000;
 
 app.use(cors());
 
-app.use(bodyParser.json()); 
+app.use(bodyParser.json());
 
 app.use("/", rootRouter);
+
+app.use("/uploads", express.static('uploads'));
 
 app.listen(port, () => {console.log(`Server is on ${port} port`)});
