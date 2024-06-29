@@ -15,7 +15,7 @@ const user_Insert = await User.create(
     //     email : "hyeona@gmail.com",
     //     address : "서울 강남구 테헤란로 518 섬유센터빌딩",
     //     phone : "010-1234-1234",
-    //     wishList : [room]
+    //     wishList : ['66797cb223e5b3df787998ed', '66797cb223e5b3df78799918','66797cb223e5b3df78799926','66797cb223e5b3df78799935','66797cb223e5b3df78799953']
     // },
     // {
     //     userId : "example1",
