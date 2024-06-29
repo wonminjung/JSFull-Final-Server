@@ -13,7 +13,7 @@ roomRouter.get("/", mainRoom);
 roomRouter.get("/detail", detailRoom);
 roomRouter.get("/search", searchRoom);
 roomRouter.post("/wishList", wishListRoom);
-roomRouter.post("/updateWishList", UpdateWishListRoom); // 가은 추가
+roomRouter.post("/updateWishList", UpdateWishListRoom); 
 roomRouter.get("/reservation", reservationRoom);
 
 
