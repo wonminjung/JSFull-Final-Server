@@ -14,7 +14,7 @@ const myPageUser = async (req, res) => {
             message : "정보가 수정되었습니다."
         })
     }else{
-        return res.status(401).json({
+        return res.status(404).json({
             message : "해당 유저가 존재하지 않습니다."
         })
     }
