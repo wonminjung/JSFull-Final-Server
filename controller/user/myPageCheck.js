@@ -32,15 +32,23 @@ const myPageCheck = async (req, res) => {
         const profileBefore = await User.findOne({userId : req.body.userId})
         await User.updateOne( {userId : req.body.userId} , {$set : {profileImg : req.file.path}})
         const user = await User.findOne({userId : req.body.userId})
-        const { ...userDatas } = user;
-        const { password, ...others } = userDatas._doc;
-        if(fs.existsSync(profileBefore.profileImg)){ // 파일이 존재한다면 true 그렇지 않은 경우 false 반환
-            fs.unlinkSync(profileBefore.profileImg) // unlinkSync 파일 삭제
+        if(user){
+            const { ...userDatas } = user;
+            const { password, ...others } = userDatas._doc;
+            if(fs.existsSync(profileBefore.profileImg)){ // 파일이 존재한다면 true 그렇지 않은 경우 false 반환
+                fs.unlinkSync(profileBefore.profileImg) // unlinkSync 파일 삭제
+            }
+            return res.status(200).json({
+                user : others,
+                message : "정보가 수정되었습니다."
+            })
+        }else{
+            return res.status(404).json({
+                user : {},
+                message : "유저를 찾지 못했습니다."
+            })
         }
-        return res.status(200).json({
-            user : others,
-            message : "정보가 수정되었습니다."
-        })
+        
     }
 };
 

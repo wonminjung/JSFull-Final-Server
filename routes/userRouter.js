@@ -4,10 +4,12 @@ import signUpUser from "../controller/user/signUpUser.js";
 import myPageUser from "../controller/user/myPageUser.js";
 import myPageCheck from "../controller/user/myPageCheck.js";
 import multer from "multer";
+import wishListUser from "../controller/user/wishListUser.js";
 
 const userRouter = express.Router();
 const upload = multer({ dest: 'uploads/profile' })
 
+userRouter.patch("/", wishListUser);
 userRouter.post("/signIn", signInUser);
 userRouter.post("/signUp", signUpUser);
 userRouter.patch("/myPage", myPageUser);
