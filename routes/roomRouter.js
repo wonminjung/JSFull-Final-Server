@@ -4,7 +4,7 @@ import searchRoom from "../controller/room/searchRoom.js";
 import wishListRoom from "../controller/room/wishListRoom.js";
 import reservationRoom from "../controller/room/reservationRoom.js";
 import mainRoom from "../controller/room/mainRoom.js";
-import UpdateWishListRoom from "../controller/room/UpdateWishListRoom";
+import UpdateWishListRoom from "../controller/room/UpdateWishListRoom.js";
 
 
 const roomRouter = express.Router();
