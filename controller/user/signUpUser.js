@@ -10,7 +10,7 @@ const signUpUser = async (req, res) => {
         // 중복 회원 코드 , 409코드
         return res.status(409).json({
             registerSuccess : false,
-            messagge : "이미 존재하는 이메일 입니다."
+            message : "이미 존재하는 이메일 입니다."
         })
     }else{
         // 신규 회원 가입, 유저 파싱
