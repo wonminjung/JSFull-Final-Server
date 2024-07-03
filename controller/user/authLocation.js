@@ -2,11 +2,10 @@
 const authLocation = async (req, res, next) => {
     try {
     // 인가가 완료된 유저는 req.user 담긴다.
-    console.log("authLocation", req.user)
-    const {password, ...others} = req.user;
+    const {password, ...others} = req.user._doc;
     res.status(200).json({
         message : '자동 로그인 성공',
-        ...others._doc,
+        ...others,
     });
     } catch (error) {
         console.error(error)
