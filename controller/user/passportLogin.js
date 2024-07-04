@@ -24,14 +24,12 @@ const passportLogin = async (req, res, next) => {
                 // 검증된 회원에게 jwt토큰 생성 후 전달
                 const token = jwt.sign(
                     {
-                        // email : user.email,
                         userId : user.userId,
-                        // issuer : 'sangwon', 
                         issuer : `${user.userId}`, 
                     },
                     SECRET_KEY,
                     {
-                        expiresIn : '24h' //유효시간 24시간
+                        expiresIn : '12h' //유효시간 24시간
                     }
                 )
 

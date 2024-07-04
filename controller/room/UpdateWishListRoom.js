@@ -13,14 +13,10 @@ const UpdateWishListRoom = async( req, res) => {
             const updatedWishList = user.wishList.filter((rooms) => rooms._id.toString() !== roomId)
             await User.updateOne({_id : user._id}, {$set : { wishList : updatedWishList}})
             const updatedUser = await User.findOne({_id : user._id})
-            console.log(updatedUser);
             const {...userDatas} = updatedUser;
             const {password, ...userDataWithoutPassword} = userDatas._doc;
             
             return res.status(200).json({message : "wishList updated successfully", user : userDataWithoutPassword  });
-           
-            
-            // res.status(200).json({message : "wishList updated successfully", wishList : user.wishList});
         }  
 
     }catch(error) {
