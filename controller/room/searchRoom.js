@@ -22,8 +22,6 @@ const searchRoom = async (req, res) => {
     
     const rooms = await Room.find(isCateCheck).skip((page - 1) * contentPerPage).limit(contentPerPage);
     const roomAllCount = await Room.find(isCateCheck).countDocuments();
-    // console.log(rooms);
-    // console.log(roomAllCount);
 
     if (rooms.length === 0) {
         res.status(200).json(
