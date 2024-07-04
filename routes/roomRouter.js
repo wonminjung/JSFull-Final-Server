@@ -11,7 +11,7 @@ const roomRouter = express.Router();
 
 roomRouter.get("/", mainRoom);
 roomRouter.get("/detail", detailRoom);
-roomRouter.get("/search", searchRoom);
+roomRouter.post("/search", searchRoom);
 roomRouter.post("/wishList", wishListRoom);
 roomRouter.post("/updateWishList", UpdateWishListRoom); 
 roomRouter.get("/reservation", reservationRoom);
