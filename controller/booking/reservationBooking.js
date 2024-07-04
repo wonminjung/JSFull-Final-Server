@@ -1,6 +1,14 @@
 import Room from "../../models/roomSchema.js";
 import Booking from "../../models/bookingSchema.js";
 
+let bookingInfo = {
+    guests: 0,
+    infant: 0,
+    userId: "",
+    roomId: "", 
+    createdAt: "",
+    updatedAt: "",
+};
 
 const reservationBooking = async (req, res) => {
     try{
@@ -16,11 +24,20 @@ const reservationBooking = async (req, res) => {
 };
 
 const successBooking = async (req, res) => {
-    try{
-        
-    } catch(error) {
-
-    }
+    // try{
+    //     const success = await Booking.create({ 
+    //         userId: req.query.userId,
+    //         roomId: req.query.roomId,
+    //         checkInDate: req.query.checkInDate,
+    //         checkOutDate: req.query.checkOutDate,
+    //         guests: req.query.guests,
+    //         infants: req.query.infants,
+    //     });
+    //     console.log(success);
+    // } catch(error) {
+    //     console.error("Error fetching booking:", error);
+    //     res.status(500).json({message:error.message});
+    // }
 };
 
-export default reservationBooking;
+export { reservationBooking, successBooking };
