@@ -1,11 +1,11 @@
 import express from "express";
-import reservationBooking from "../controller/booking/reservationBooking.js";
+import { reservationBooking, successBooking } from "../controller/booking/reservationBooking.js";
 import bookingListBooking from "../controller/booking/bookingListBooking.js";
 
 const bookingRouter = express.Router();
 
 bookingRouter.get("/reservation", reservationBooking);
-bookingRouter.get("/reservation/success", reservationBooking);
+bookingRouter.get("/reservation/success", successBooking);
 bookingRouter.post("/bookingList", bookingListBooking);
 
 
