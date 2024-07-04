@@ -1,10 +1,10 @@
-import Booking from "../../models/bookingSchema.js";
 import Room from "../../models/roomSchema.js";
 
 const searchRoom = async (req, res) => {
     const contentPerPage = 18;
 
-    const { cate, val, sdate, edate, guests, lPrice, gPrice, maxUser, bed, bedroom, bathroom, page } = req.query;
+    const page = +req.body.page;
+    const { cate, val, sdate, edate, guests, lPrice, gPrice, maxUser, bed, bedroom, bathroom } = req.query;
 
     const isCateCheck = cate === "searchResult" ?
         {
