@@ -4,7 +4,6 @@ import User from "../../models/userSchema.js";
 
 const wishListRoom = async (req, res) => {
     try {
-        console.log(req.body);
         // user 조회 (wishList 참조객체도 같이)
         const user = await User.findOne({ userId: req.body.userId }).populate("wishList");
         
