@@ -4,7 +4,8 @@ import bookingListBooking from "../controller/booking/bookingListBooking.js";
 
 const bookingRouter = express.Router();
 
-bookingRouter.post("/reservation", reservationBooking);
+bookingRouter.get("/reservation", reservationBooking);
+bookingRouter.get("/reservation/success", reservationBooking);
 bookingRouter.post("/bookingList", bookingListBooking);
 
 
