@@ -1,10 +1,10 @@
-import Booking from "../../models/bookingSchema.js";
 import Room from "../../models/roomSchema.js";
 
 const searchRoom = async (req, res) => {
     const contentPerPage = 18;
 
-    const { cate, val, sdate, edate, guests, lPrice, gPrice, maxUser, bed, bedroom, bathroom, page } = req.query;
+    const page = +req.body.page;
+    const { cate, val, sdate, edate, guests, lPrice, gPrice, maxUser, bed, bedroom, bathroom } = req.query;
 
     const isCateCheck = cate === "searchResult" ?
         {
@@ -22,13 +22,13 @@ const searchRoom = async (req, res) => {
     
     const rooms = await Room.find(isCateCheck).skip((page - 1) * contentPerPage).limit(contentPerPage);
     const roomAllCount = await Room.find(isCateCheck).countDocuments();
-    console.log(rooms);
 
     if (rooms.length === 0) {
         res.status(200).json(
             {
                 searchResult: false,
                 message: "검색 결과가 없습니다.",
+                roomsCount: roomAllCount,
                 rooms: rooms,
             }
         );
