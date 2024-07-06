@@ -4,9 +4,7 @@ import User from "../../models/userSchema.js";
 
 const reservationBooking = async (req, res) => {
     try{
-        console.log(req.query);
         const reservation = await Room.findOne({ _id: req.query.roomId}, {roomImg: 1, title: 1, dayPrice: 1, cleanVat: 1});
-        console.log(reservation);
         res.json(reservation);
     } catch(error) {
         console.error("Error fetching reservation:", error);
@@ -35,15 +33,13 @@ const successBooking = async (req, res) => {
             dateList.push(new Date(`${checkInDate}Z`));
 
             dateList[i].setDate((dateList[i].getDate() + i));
-            console.log(dateList[i]);
         }
+
 
         
         const updateSchedule = await Room.findOne({_id: roomId}, {roomSchedule : 1});
-        console.log(updateSchedule);
-        updateSchedule.roomSchedule.push(...dateList);
-        console.log(updateSchedule);
-        // await Room.updateOne({_id: roomId}, {'$set':{roomSchedule: updateSchedule}})
+        const newSchedule = updateSchedule.roomSchedule.concat(dateList);
+        await Room.updateOne({_id: roomId}, {'$set':{roomSchedule: newSchedule}});
 
 
 
