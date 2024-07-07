@@ -12,16 +12,13 @@ const wishListRoom = async (req, res) => {
             return res.status(404).json({ message: "User not found" });
         }
         
-        // check
-        console.log("User Name:", user.name);
-
         // 찜한 숙소 다 가져오기 (array)
         const rooms = user.wishList;
 
         // check
-        rooms.forEach(room => {
-            console.log("Room Title:", room.title);
-        });
+        // rooms.forEach(room => {
+        //     console.log("Room Title:", room.title);
+        // });
 
         // client에 room정보 보내기
         res.status(200).json({ rooms: rooms });
