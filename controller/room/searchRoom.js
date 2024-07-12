@@ -14,7 +14,6 @@ const searchRoom = async (req, res) => {
         address: {$regex: val}, $or: [ {"roomData.maxUser": {$eq: Number(maxUser)}}, {"roomData.maxUser": {$gte: Number(guests)}} ],
         "roomData.bed": {$gte: Number(bed)}, "roomData.bedroom": {$gte: Number(bedroom)}, "roomData.bathroom": {$gte: Number(bathroom)}
     };
-
     const isCateCheck = cate === "searchResult" ? { ...defaultCheck } : { ...defaultCheck, cate: cate };
 
     const rooms = await Room.find(isCateCheck).skip((page - 1) * contentPerPage).limit(contentPerPage);
