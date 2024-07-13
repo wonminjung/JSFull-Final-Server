@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 // .env 실행
 dotenv.config();
 
-console.log(process.env.MONGODB_KEY);
 const connect_url = process.env.MONGODB_KEY;
 
 const connect = () => {
