@@ -1,7 +1,11 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
 
-// mongodb+srv://jsfullprojectteam01:<password>@app.xqexdp9.mongodb.net/
-const connect_url = `mongodb+srv://jsfullprojectteam01:1234@app.xqexdp9.mongodb.net/`;
+// .env 실행
+dotenv.config();
+
+console.log(process.env.MONGODB_KEY);
+const connect_url = process.env.MONGODB_KEY;
 
 const connect = () => {
     if(process.env.NODE_ENV !== "production"){

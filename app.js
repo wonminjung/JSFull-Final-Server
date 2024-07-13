@@ -3,7 +3,7 @@ import connect from "./connect/connect.js";
 import rootRouter from "./routes/rootRouter.js";
 import cors from 'cors';
 import bodyParser from "body-parser";
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 import { initializePassport } from "./auth/auth.js";
 import passport from "passport";
 
